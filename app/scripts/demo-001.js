@@ -69,6 +69,9 @@ angular.module("tutor", [])
 
         $scope.ok = function() {
             if ($scope.state === "New") {
+                if ($scope.editingEmployee.minority == 'no') {
+                    $scope.editingEmployee.nation = '汉族';
+                };
                 $scope.employees.push($scope.editingEmployee);
                 $scope.selectedEmployee = $scope.editingEmployee;
             } else if ($scope.state === "Modify") {
@@ -86,7 +89,7 @@ angular.module("tutor", [])
         };
 
         $scope.okDisabled = function() {
-            if ($scope.editing && ($scope.editingEmployee.name) && ($scope.editingEmployee.name.length >= 0)) {
+            if ($scope.editing && ($scope.editingEmployee.name) && ($scope.editingEmployee.name.length >= 1)) {
                 return false;
             } else {
                 return true;
