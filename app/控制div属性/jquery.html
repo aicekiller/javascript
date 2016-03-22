@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    #outer {
+        width: 500px;
+        margin: 0 auto;
+        padding: 0;
+        text-align: center;
+    }
+    
+    #div1 {
+        width: 100px;
+        height: 100px;
+        background: black;
+        margin: 10px auto;
+        display: block;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="outer">
+        <input type="button" value="变宽" />
+        <input type="button" value="变高" />
+        <input type="button" value="变色" />
+        <input type="button" value="隐藏" />
+        <input type="button" value="重置" />
+        <div id="div1"></div>
+    </div>
+    <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+    <script>
+        $(function(){
+            var oBtn = $('input[type="button"]'),
+                oDiv = $('#div1'),
+                len = oBtn.length,
+                attrArr = ['width','height','background','display','display'],
+                valArr = ['200px','200px','red','none','block'],
+                i = 0;
+                
+            for (; i < len; i++) {
+                let num = i;
+                oBtn.eq(num).click(function(){
+                    num == len - 1 && (oDiv.attr('style',''));
+                    changeStyle(oDiv,attrArr[num],valArr[num]);
+                });
+            };
+
+            function changeStyle(ele,attr,value){
+                return $(ele).css(attr,value);
+            };
+
+
+
+
+
+
+
+        });
+    </script>
+</body>
+
+</html>
