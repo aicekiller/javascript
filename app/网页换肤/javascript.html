@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 </head>
-<link rel="stylesheet" href="../styles/common.css">
+<link rel="stylesheet" href="../styles/green.css">
 <style>
 	body,ul,li{margin:0;padding:0;}
 	html,body{height:100%;}
@@ -43,24 +43,24 @@
     </ul>
 	</div>
 	<script>
-		window.onload = function(){
+		window.onload = function() {
 			var oSkin = document.getElementById('skin'),
 				oLi = oSkin.getElementsByTagName('li'),
+				oLink = document.getElementsByTagName('link')[0],
 				len = oLi.length,
 				i = 0;
-
+			console.log(oLink);
 			for (; i < len; i++) {
 				oLi[i].index = i;
 				oLi[i].onclick = function() {
-					for(var p in oLi){
+					for (var p in oLi) {
 						oLi[p].className = '';
 					}
-
-				}
-
-			}
-
-
+					this.className = 'current';
+					console.log(oLink['href']);
+					oLink['href'] = '../styles/' + this.id + '.css';
+				};
+			};
 		}
 	</script>
 </body>
