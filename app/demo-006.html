@@ -3,45 +3,82 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>轮播图</title>
+    <title>面向对象之轮播图</title>
 </head>
 <style type="text/css">
-	*{margin: 0;padding: 0;}
-	ul,li{list-style: none;}
-	.slider{width: 200px;height: 200px;position: relative;}
-	.slider-img-ul{overflow: hidden;}
-	.slider-img-ul li{float: left;display: inline;}
-	.slider-img-ul li img{width: 200px;height: 200px;display: block;}
+    * {
+        margin: 0;
+        padding: 0;
+    }
 
-	.slider-num{position: absolute;right: 10px;bottom: 5px;}
-	.slider-num li{width: 5px;height: 5px;border:1px solid #ccc;text-align: center;color: #000;display: inline-block;margin-left: 5px;}
+    ul,
+    li {
+        list-style: none;
+    }
 
+    .slider {
+        width: 640px;
+        height: 428px;
+        position: relative;
+    }
+
+    .slider-img-ul {
+        overflow: hidden;
+    }
+
+    .slider-img-ul li {
+        float: left;
+        display: inline;
+        position: absolute;
+    }
+
+    .slider-img-ul li img {
+        width: 640px;
+        height: 428px;
+        display: block;
+    }
+
+    .slider-num {
+        position: absolute;
+        right: 10px;
+        bottom: 5px;
+    }
+
+    .slider-num li {
+        width: 10px;
+        height: 10px;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        display: inline-block;
+        margin-left: 5px;
+    }
+
+    .slider-num li.active {
+        background: red;
+    }
 </style>
+
 <body>
-    <!--
-		1.点击数字自动切换；
-		2.点击左右切换按钮切换；
-		3.自动轮播
-      -->
-    <div class="slider">
-        <ul class="slider-img-ul">
-            <li><a href="#"><img src="http://dummyimage.com/100x100" alt=""></a></li>
-            <li><a href="#"><img src="http://dummyimage.com/200x200" alt=""></a></li>
-            <li><a href="#"><img src="http://dummyimage.com/300x300" alt=""></a></li>
-        </ul>
-        <ul class="slider-num">
-        	<li>1</li>
-        	<li>2</li>
-        	<li>3</li>
-        </ul>
-    </div>
-		
-    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-    <script>
-    $(function(){
-        
-    })
-    </script>
+<!--
+    1.点击数字自动切换；
+    2.点击左右切换按钮切换；
+    3.自动轮播
+  -->
+<div class="slider">
+    <ul id="slider-img-ul" class="slider-img-ul">
+        <li>
+            <a href="javascript:;"><img src="images/slide_1.jpg" alt=""></a>
+        </li>
+        <li>
+            <a href="javascript:;"><img src="images/slide_2.jpg" alt=""></a>
+        </li>
+    </ul>
+    <ul id="slider-num" class="slider-num">
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<script src="scripts/demo-006.js"></script>
 </body>
 
 </html>

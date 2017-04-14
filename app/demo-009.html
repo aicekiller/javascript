@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+</head>
+
+<body>
+    <input type="text"><span>123</span>
+
+    <script>
+        var animal = function(name){
+            console.log(this.prototype);
+            this.name = name;
+            this.action = function(){
+                //console.log(this.name);
+            }
+        }
+
+        var dog = new animal('cat');
+        dog.action();
+    </script>
+</body>
+
+</html>

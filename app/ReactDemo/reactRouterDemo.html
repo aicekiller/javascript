@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React Router</title>
+    <script src="../../bower_components/react/react.min.js"></script>
+    <script src="../../bower_components/react/react-dom.min.js"></script>
+    <script src="../scripts/browser.min.js"></script>
+    <script src="../scripts/ReactRouter.min.js"></script>
+</head>
+<body>
+<div id="container">
+
+</div>
+<script type="text/babel">
+    var Home = React.createClass({
+        render:function () {
+            return (
+                <div>
+                    <h2>Hello</h2>
+                    <p>first page</p>
+                </div>
+            )
+        }
+
+    });
+    var App = React.createClass({
+        getDefaultProps: function () {
+
+        },
+        render: function () {
+            return (
+                    <div>
+                        <h1>simple App</h1>
+                        <ul className="header">
+                            <li>home</li>
+                            <li>stuff</li>
+                            <li>contact</li>
+                        </ul>
+                        <div className="content">
+
+                        </div>
+                    </div>
+            )
+        }
+    })
+    ReactDOM.render(
+            <ReactRouter.Router>
+                <ReactRouter.Router path="/" component={App}>
+
+                </ReactRouter.Router>
+            </ReactRouter.Router>,
+        document.getElementById('container')
+    );
+</script>
+</body>
+</html>

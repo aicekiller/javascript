@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>practice</title>
+    <link rel="stylesheet" href="styles/common.css">
+</head>
+
+<body>
+    <div id="test">
+        <span id="one"></span><span id="two"></span><span id="three"></span>
+    </div>
+</body>
+<script>
+var prices = {
+    'pr_1': '$1.99',
+    'pr_2': '$9.99',
+    'pr_3': '$5.00'
+};
+
+var template = document.getElementById('test').innerHTML;
+
+template.replace(
+    /(<span id=")(.*?)(">)(<\/span>)/g,
+    function(match, $1, $2, $3, $4) {
+        return $1 + $2 + $3 + "123" + $4;
+    }
+);
+</script>
+
+</html>
