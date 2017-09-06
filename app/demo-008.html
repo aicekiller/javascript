@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Vue demo</title>
+    <meta charset="UTF-8">
+    <title>Vue demo</title>
 </head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .input-wrap {
+        overflow: hidden;
+    }
+
+    .input-wrap input {
+        border:1px solid red;
+        height:40px;
+        width: 100%;
+    }
+
+    span {
+        float: right
+    }
+</style>
 <body>
-	<div id="app">
-		<p>{{name}}</p>
-	</div>
-	<script src="../bower_components/vue/dist/vue.min.js"></script>
-	<script>
-		var obj = {
-			'name':'张三'
-		};
-		var vm = new Vue({
-			el:'#app',
-			data:obj
-		})
-	</script>
+<div class="wrap">
+    <span>123456</span>
+    <div class="input-wrap"><input type="text"></div>
+</div>
 </body>
 </html>

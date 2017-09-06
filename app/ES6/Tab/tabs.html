@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab</title>
+</head>
+<body>
+<script>
+    class Tab {
+        constructor(options) {
+            let defaultOptions = {
+                element: '',
+                navSelector: '[data-role="tabs-nav"]',
+                panelSelector: '[data-role="tabs-panels"]',
+                activeClassName: 'active'
+            }
+            this.options = Object.assign({}, defaultOptions, options);
+        }
+
+        checkOptions() {
+            if (this.element.options){
+                throw new Error('element is required');
+            }
+            return this;
+        }
+
+        bindEvents(){
+
+        }
+    }
+</script>
+</body>
+</html>

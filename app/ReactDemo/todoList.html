@@ -32,15 +32,32 @@
 </head>
 <body>
 <div id="container"></div>
+<script src="../scripts/babel.min.js"></script>
 <script type="text/babel">
+    import React from "react";
+    import ReactDOM from  "react-dom";
 
+    class Panel extends React.Component {
+        constructor(props, items) {
+            super(props);
+            this.state = {
+                items: [],
+                text: ''
+            }
+        }
+        render(){
+            return(
+
+            )
+        }
+    }
     var Panel = React.createClass({
         getInitialState: function () {
             return {
                 items: []
             }
         },
-        addItem:function (e) {
+        addItem: function (e) {
 
         },
         render: function () {
@@ -49,10 +66,8 @@
                         <div className="wrap">
                             <button className="btn-add">add</button>
                             <div className="input-wrap">
-
                                 <input value="enter task" type="text"/>
                             </div>
-
                         </div>
                         <Addarea />
                     </div>
@@ -83,8 +98,6 @@
         document.getElementById('container')
     );
 </script>
-<script src="../../bower_components/react/react.min.js"></script>
-<script src="../../bower_components/react/react-dom.min.js"></script>
-<script src="../scripts/browser.min.js"></script>
+
 </body>
 </html>

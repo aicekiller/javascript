@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    const arr = [1, 2, 3];
+    const bookCollection = () => {
+        return {book1: "UED", book2: "apple"}
+    }
+
+    const {book1, book2, book3 = "not find"} = bookCollection();
+    const [a, , b] = arr;
+    const {length: strLength} = arr;
+
+    const Person = (() => {
+        const a = 1;
+        return class {
+            getItem() {
+                console.log(a);
+            }
+        }
+    })();
+
+    const first = new Map([['a', 1], [{'b': 1}, 2]]);
+    first.set(null, 1).set(undefined, 0);
+
+    class Anima {
+        constructor(type, name) {
+            this.type = type;
+            this.name = name;
+        }
+
+        eat() {
+            console.log('eat food');
+        }
+    }
+
+    class Dog extends Anima {
+        constructor(type, name) {
+            super(type,name)
+        }
+    }
+
+    var tomas = new Dog('Dog','kittle')
+    tomas.eat();
+</script>
+</body>
+</html>
