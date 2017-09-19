@@ -3,10 +3,7 @@ const fs = require('fs');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-
-const appDirectory = fs.realpathSync(process.cwd());
-
-console.log(envPublicUrl);
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: {
@@ -27,10 +24,10 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/,
-                use: [
-                    'style-loader',
-                    'css-loader'
-                ]
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: "css-loader"
+                })
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/,
@@ -41,6 +38,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new ExtractTextPlugin('styles.css'),
         //清除dist
         new CleanWebpackPlugin(['dist']),
         //生成新的模板文件dist/index.html
