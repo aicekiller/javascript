@@ -20,5 +20,11 @@ if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
 measureFileSizesBeforeBuild(paths.appDist)
     .then(previousFileSizes => {
         fs.emptyDirSync(paths.appDist);
-
+        return build(previousFileSizes);
     })
+
+function build(previousFileSizes) {
+    chalk.green('开始构建！');
+
+    let compiler = webpack(config);
+}
